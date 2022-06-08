@@ -4,6 +4,7 @@ from urllib.parse import urljoin
 from urllib.request import urlopen
 
 start_url = "https://www.geeksforgeeks.org/recursion/"
+depth_limit = 1000
 
 queue = deque([])
 
@@ -14,7 +15,7 @@ visited_list = []
 # Crawl the page and populate the queue with newly found URLs
 def crawl(url):
     visited_list.append(url)
-    if len(queue) > 99:
+    if len(queue) > depth_limit:
         return
 
     urlf = urlopen(url)
@@ -34,7 +35,7 @@ def crawl(url):
 
         # If not found in queue
         if flag == 0:
-            if len(queue) > 99:
+            if len(queue) > depth_limit:
                 return
             if (visited_list.count(complete_url)) == 0:
                 queue.append(complete_url)
