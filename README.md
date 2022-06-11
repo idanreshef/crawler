@@ -10,4 +10,5 @@ You can easily install them by running pip install -r  requirements.txt
 Here you can elaborate about how to run and what are the relevant parameters.
 Like in the main assign base_url to the url you would like to start the crawling from and the crawl_depth to the expected run depth.
 
+
 Enjoy :)
